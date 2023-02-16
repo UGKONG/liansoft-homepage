@@ -12,9 +12,9 @@ if (rootNode) {
   createRoot(rootNode).render(
     <StrictMode>
       <Provider store={store}>
-        <HashRouter>
+        <HistoryRouter basename="/liansoft">
           <App />
-        </HashRouter>
+        </HistoryRouter>
       </Provider>
     </StrictMode>
   );
