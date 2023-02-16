@@ -3,15 +3,18 @@ import { useDispatch } from "react-redux";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./common/Footer";
 import Header from "./common/Header";
+import Notice from "./common/Notice";
+import ScrollTopButton from "./common/ScrollTopButton";
 import Balanceplay from "./pages/Balanceplay";
 import Bodyscanner from "./pages/Bodyscanner";
 import Business from "./pages/Business";
 import Drcare from "./pages/Drcare";
 import Home from "./pages/Home";
-import Info from "./pages/Info";
-import Part from "./pages/Part";
+import History from "./pages/History";
 import Security from "./pages/Security";
 import Way from "./pages/Way";
+import Info from "./pages/Info";
+import Contact from "./pages/Contact";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -25,11 +28,7 @@ export default function App() {
 
   const windowScrollListener = (): void => {
     const y = window.scrollY;
-    if (y === 0) {
-      dispatch({ type: "isTop", payload: true });
-    } else {
-      dispatch({ type: "isTop", payload: false });
-    }
+    dispatch({ type: "scroll", payload: y });
   };
 
   const init = () => {
@@ -46,19 +45,22 @@ export default function App() {
   return (
     <>
       <Header />
+      <Notice />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/history" element={<History />} />
         <Route path="/business" element={<Business />} />
-        <Route path="/part" element={<Part />} />
         <Route path="/way" element={<Way />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/drcare" element={<Drcare />} />
         <Route path="/balanceplay" element={<Balanceplay />} />
         <Route path="/bodyscanner" element={<Bodyscanner />} />
         <Route path="/security" element={<Security />} />
       </Routes>
 
+      <ScrollTopButton />
       <Footer />
     </>
   );

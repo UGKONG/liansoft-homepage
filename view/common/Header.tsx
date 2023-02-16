@@ -6,13 +6,22 @@ import Logo from "./Logo";
 import MenuList from "./MenuList";
 
 export default function Header() {
-  const isTop = useSelector((x: Store) => x?.isTop);
+  const scroll = useSelector((x: Store) => x?.scroll);
   const pageName = useSelector((x: Store) => x?.pageName);
 
   const downClassName = useMemo<string>(() => {
-    if (!pageName) return !isTop ? "down" : "";
+    if (!pageName) return scroll ? "down" : "";
     return "down";
-  }, [isTop, pageName]);
+  }, [scroll, pageName]);
+
+  const scrollPercent = useMemo<number>(() => {
+    let total = document.querySelector("html")?.scrollHeight ?? 0;
+    let view = total ? window.innerHeight : 0;
+    let calc = total - view;
+    if (calc <= 0) return 0;
+    let result = (scroll / calc) * 100;
+    return result;
+  }, [scroll]);
 
   return (
     <Container className={downClassName}>
@@ -22,7 +31,7 @@ export default function Header() {
           <MenuList />
         </NavigationBar>
       </Wrap>
-      <ScrollIndicator />
+      <ScrollIndicator width={scrollPercent} />
     </Container>
   );
 }
@@ -64,14 +73,14 @@ const NavigationBar = styled.nav`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 `;
-const ScrollIndicator = styled.div`
+const ScrollIndicator = styled.div<{ width: number }>`
   position: fixed;
-  z-index: 9;
-  height: 3px;
   left: 0;
   top: 0;
+  width: ${(x) => String(x?.width ?? 0)}%;
+  height: 3px;
+  z-index: 9;
   background-color: #302f4c;
-  width: 0%;
 `;

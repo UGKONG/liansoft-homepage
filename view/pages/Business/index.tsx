@@ -1,12 +1,14 @@
 import Container from "../../common/Container";
 import MainBanner from "../../common/MainBanner";
 import banner from "../../assets/images/banner/business.jpg";
-import styled from "styled-components";
-import businessCircle from "../../assets/images/businessCircle.jpg";
+import Contents from "./Contents";
 
 const name = "리안소프트: 사업영역";
 const title = "사업영역";
-const subTitle = "사업영역 소개문구";
+const subTitle = `㈜리안소프트글로벌은 건강과 안전을 책임집니다.
+센서와 장비, IOT 기술을 아우르는 통합 기술을 바탕으로 하여모든
+사람의 건강을 책임지는 헬스케어 솔루션 / 시스템을 만들어 갑니다.
+`;
 
 export default function Business() {
   return (
@@ -14,23 +16,8 @@ export default function Business() {
       <title>{name}</title>
       <Container>
         <MainBanner title={title} subTitle={subTitle} bg={banner} />
-        <Wrap>
-          <Image src={businessCircle} />
-        </Wrap>
+        <Contents />
       </Container>
     </>
   );
 }
-
-const Wrap = styled.div`
-  width: 1200px;
-  z-index: 2;
-  position: relative;
-  background-color: #fff;
-  margin: 0 auto;
-`;
-const Image = styled.img`
-  display: block;
-  width: 80%;
-  margin: 20px auto 50px;
-`;

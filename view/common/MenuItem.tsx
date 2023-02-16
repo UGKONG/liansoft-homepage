@@ -27,6 +27,7 @@ const Container = styled.li`
   justify-content: center;
   transition: 0.3s;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: #332f46;

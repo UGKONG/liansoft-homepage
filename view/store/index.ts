@@ -3,8 +3,9 @@ import type { Dispatch, Store } from "./index.type";
 
 // Store Current State
 const currentState: Store = {
-  isTop: true,
+  scroll: 0,
   pageName: null,
+  isNotice: false,
 };
 
 // Store Reducer

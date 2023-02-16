@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Store } from "../../store/index.type";
 
 export default function ScrollBtn() {
-  const isTop = useSelector((x: Store) => x?.isTop);
+  const scroll = useSelector((x: Store) => x?.scroll);
 
   const onClick = (): void => {
     const height = window.innerHeight;
@@ -12,7 +12,7 @@ export default function ScrollBtn() {
   };
 
   return (
-    <Button className={isTop ? "" : "center"} onClick={onClick}>
+    <Button className={scroll < 50 ? "" : "center"} onClick={onClick}>
       <Icon />
     </Button>
   );

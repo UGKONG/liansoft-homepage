@@ -19,6 +19,7 @@ const Container = styled.ul`
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #ffffffdd;
 `;

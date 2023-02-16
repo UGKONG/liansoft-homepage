@@ -6,6 +6,7 @@ export type Dispatch = {
 
 // Store State
 export type Store = {
-  isTop: boolean;
+  scroll: number;
   pageName: null | string;
+  isNotice: boolean;
 };
