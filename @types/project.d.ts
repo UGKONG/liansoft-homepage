@@ -5,4 +5,5 @@ declare type Project = {
   desc: string;
   url?: string;
   device: "pc" | "mobile";
+  platform?: { name: "Android" | "IOS"; url: string }[];
 };

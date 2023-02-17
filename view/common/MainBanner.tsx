@@ -10,10 +10,8 @@ type Props = {
 export default function MainBanner({ title, subTitle, bg, darkMode }: Props) {
   return (
     <Container img={bg} darkMode={darkMode ? true : false}>
-      <Wrap>
-        <Title>{title}</Title>
-        <SubTitle>{subTitle}</SubTitle>
-      </Wrap>
+      <Title>{title}</Title>
+      <SubTitle>{subTitle}</SubTitle>
     </Container>
   );
 }
@@ -29,9 +27,13 @@ const Container = styled.div<{ img: string; darkMode: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  align-content: center;
   margin-bottom: 50px;
   user-select: none;
   position: relative;
+  text-align: center;
+  flex-direction: column;
+  color: #fff;
 
   &::before {
     display: ${(x) => (x?.darkMode ? "block" : "none")};
@@ -44,15 +46,6 @@ const Container = styled.div<{ img: string; darkMode: boolean }>`
     background-color: #00000050;
   }
 `;
-const Wrap = styled.div`
-  width: 100%;
-  height: calc(100% - 80px);
-  text-align: center;
-  flex-wrap: wrap;
-  color: #fff;
-  padding: 46px 0;
-  position: relative;
-`;
 const Title = styled.h1`
   width: 100%;
   padding: 20px 0;
@@ -60,13 +53,13 @@ const Title = styled.h1`
   font-size: 36px;
   letter-spacing: 3px;
   margin-bottom: 18px;
-  text-shadow: 1px 2px 4px black;
+  text-shadow: 1px 2px 4px #000;
 
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
-    width: 30px;
+    width: 40px;
     height: 1px;
     background-color: #fff;
     left: 50%;
@@ -74,10 +67,11 @@ const Title = styled.h1`
   }
 `;
 const SubTitle = styled.h2`
-  max-width: 600px;
+  max-width: 1000px;
   font-size: 18px;
   text-shadow: 0 2px 4px #00000050;
   font-weight: 400;
   margin: 0 auto;
   white-space: pre-wrap;
+  position: relative;
 `;

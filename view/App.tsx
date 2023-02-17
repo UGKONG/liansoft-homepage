@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./common/Footer";
 import Header from "./common/Header";
-import Notice from "./common/Notice";
 import ScrollTopButton from "./common/ScrollTopButton";
 import Balanceplay from "./pages/Balanceplay";
 import Bodyscanner from "./pages/Bodyscanner";
@@ -15,10 +14,12 @@ import Security from "./pages/Security";
 import Way from "./pages/Way";
 import Info from "./pages/Info";
 import Contact from "./pages/Contact";
+import Loading from "./common/Loading";
 
 export default function App() {
   const dispatch = useDispatch();
   const location = useLocation();
+  const [isLoad, setIsLoad] = useState<boolean>(true);
 
   const pageChange = (): void => {
     let payload = location.pathname?.replace(/\//g, "");
@@ -32,6 +33,7 @@ export default function App() {
   };
 
   const init = () => {
+    setTimeout(() => setIsLoad(false), 500);
     windowScrollListener();
     window.addEventListener("scroll", windowScrollListener);
     return () => {
@@ -45,7 +47,6 @@ export default function App() {
   return (
     <>
       <Header />
-      <Notice />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -62,6 +63,8 @@ export default function App() {
 
       <ScrollTopButton />
       <Footer />
+
+      {isLoad && <Loading />}
     </>
   );
 }

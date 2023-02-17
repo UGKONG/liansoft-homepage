@@ -13,7 +13,7 @@ export default function Info() {
     <>
       <title>{name}</title>
       <Container>
-        <MainBanner title={title} subTitle={subTitle} bg={banner} />
+        <MainBanner title={title} subTitle={subTitle} bg={banner} darkMode />
         <Contents />
       </Container>
     </>

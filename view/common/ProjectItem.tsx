@@ -15,20 +15,32 @@ export default function ProjectItem({ data, idx = 0 }: Props) {
     return get?.default;
   }, []);
 
-  const onClick = (): void => {
-    window.open(data?.url);
+  const onClick = (url: string): void => {
+    window.open(url);
   };
 
   return (
     <Container>
       <Title>
         {title}
-        {data?.url ? <LinkButton onClick={onClick} /> : null}
+        <ButtonContainer>
+          {data?.platform ? (
+            data?.platform?.map((item, i) => (
+              <LinkButton
+                key={i}
+                text={item?.name}
+                onClick={() => onClick(item?.url)}
+              />
+            ))
+          ) : data?.url ? (
+            <LinkButton onClick={() => onClick(data?.url as string)} />
+          ) : null}
+        </ButtonContainer>
       </Title>
       <Contents>
         {img ? (
           <ImageWrap device={data?.device}>
-            <Image src={img} />
+            <Image src={img} device={data?.device} />
           </ImageWrap>
         ) : null}
         <TextWrap dangerouslySetInnerHTML={{ __html: data?.desc ?? "" }} />
@@ -53,7 +65,8 @@ const Title = styled.h2`
   align-items: center;
   justify-content: space-between;
 `;
-const LinkButton = styled.button`
+const ButtonContainer = styled.div``;
+const LinkButton = styled.button<{ text?: string }>`
   font-size: 14px;
   color: #fff;
   background-color: #35456e;
@@ -62,12 +75,13 @@ const LinkButton = styled.button`
   border-radius: 5px;
   border: none;
   outline: none;
-  text-indent: 1px;
-  letter-spacing: 1px;
+  text-indent: 2px;
+  letter-spacing: 2px;
+  margin-left: 10px;
   cursor: pointer;
 
   &::before {
-    content: "바로가기";
+    content: "${(x) => x?.text ?? "Link"}";
   }
 
   &:hover {
@@ -79,7 +93,8 @@ const Contents = styled.div`
   align-items: center;
 `;
 const ImageWrap = styled.div<{ device: "pc" | "mobile" }>`
-  height: 400px;
+  min-width: ${(x) => (x?.device === "pc" ? "50%" : "20%")};
+  max-width: 60%;
   overflow: hidden;
   border: 1px solid #eee;
 
@@ -87,11 +102,16 @@ const ImageWrap = styled.div<{ device: "pc" | "mobile" }>`
     transform: scale(1.03);
   }
 `;
-const Image = styled.img`
-  /* width: 100%; */
-  height: 100%;
+const Image = styled.img<{ device: "pc" | "mobile" }>`
+  ${(x) => {
+    let pc = "width: 100%;";
+    let mo = "height: 100%; max-height: 600px;";
+    return x?.device === "pc" ? pc : mo;
+  }}
+  object-fit: contain;
   transition: 0.3s;
   transform: scale(1);
+  display: block;
 `;
 const TextWrap = styled.div`
   flex: 1;

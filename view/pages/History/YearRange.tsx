@@ -1,8 +1,8 @@
-import { useMemo } from "react";
 import styled from "styled-components";
+import { useMemo } from "react";
 import { companyStartYear } from "../../../public/strings";
 
-export default function TableHead() {
+export default function YearRange() {
   const nowYear = useMemo<number>(() => {
     let date = new Date();
     return date.getFullYear();
@@ -10,31 +10,20 @@ export default function TableHead() {
 
   return (
     <Container>
-      <tr>
-        <th colSpan={3}>
-          <Circle>
-            <p>
-              {companyStartYear}
-              <br />
-              <small>~</small>
-              <br />
-              <span>{nowYear}</span>
-            </p>
-          </Circle>
-        </th>
-      </tr>
+      <span>{companyStartYear}</span>
+      <small>~</small>
+      <span>{nowYear}</span>
     </Container>
   );
 }
-
-const Container = styled.thead``;
-const Circle = styled.div`
+const Container = styled.div`
   width: 120px;
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
   color: #fff;
   font-weight: 500;
   background-color: #1b2e5a;
@@ -44,4 +33,5 @@ const Circle = styled.div`
   line-height: 20px;
   font-size: 20px;
   margin: 0 auto;
+  white-space: pre-wrap;
 `;

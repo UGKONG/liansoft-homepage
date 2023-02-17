@@ -12,7 +12,7 @@ export default function Way() {
     <>
       <title>{name}</title>
       <Container>
-        <MainBanner title={title} subTitle={subTitle} bg={banner} />
+        <MainBanner title={title} subTitle={subTitle} bg={banner} darkMode />
         <Contents />
       </Container>
     </>
