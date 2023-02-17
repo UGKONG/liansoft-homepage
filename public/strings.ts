@@ -27,6 +27,22 @@ export const menuList: MenuList[] = [
   },
 ];
 
+// 가맹 문의 (SNS)
+export const drcareSnsList: Sns[] = [
+  { name: "kakao", img: "kakao.png", url: "https://pf.kakao.com/_TSclxj" },
+  {
+    name: "instagram",
+    img: "instagram.png",
+    url: "https://www.instagram.com/dr.careunion/",
+  },
+  {
+    name: "youtube",
+    img: "youtube.png",
+    url: "https://www.youtube.com/@user-fg6px3no1m",
+  },
+  { name: "blog", img: "blog.png", url: "https://blog.naver.com/drcareunion" },
+];
+
 // 솔루션 리스트
 export const solutionList: Solution[] = [
   { img: "img1_thum.jpg", path: "", name: "회원관리 프로그램" },

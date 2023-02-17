@@ -29,7 +29,12 @@ export default function Contents() {
         <ProjectItem key={item?.id} idx={i} data={item} />
       ))}
 
-      <Center type="list" title="운용센터" list={list} fieldName="CENTER_NM" />
+      <Center
+        type="list"
+        title={`운용센터 (${list?.length}개)`}
+        list={list}
+        fieldName="CENTER_NM"
+      />
     </Container>
   );
 }

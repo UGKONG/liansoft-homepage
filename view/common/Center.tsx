@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { RiHome7Fill } from "react-icons/ri";
-import { useMemo } from "react";
 
 type Props = {
   type: "list" | "count";
@@ -48,7 +47,9 @@ export default function Center({
   );
 }
 
-const Container = styled.section``;
+const Container = styled.section`
+  margin-bottom: 50px;
+`;
 const Title = styled.h3`
   font-size: 15px;
   font-weight: 700;
