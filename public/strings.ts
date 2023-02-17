@@ -311,6 +311,10 @@ export const balanceplayProjectList: Project[] = [
 밸런스멤버쉽 웹 바로가기
 `,
     device: "mobile",
+    platform: [
+      { name: "Android", url: "" },
+      { name: "IOS", url: "" },
+    ],
   },
   {
     id: 3,

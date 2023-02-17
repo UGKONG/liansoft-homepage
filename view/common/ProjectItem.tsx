@@ -16,7 +16,7 @@ export default function ProjectItem({ data, idx = 0 }: Props) {
   }, []);
 
   const onClick = (url: string): void => {
-    window.open(url);
+    if (url) window.open(url);
   };
 
   return (
@@ -28,7 +28,7 @@ export default function ProjectItem({ data, idx = 0 }: Props) {
             data?.platform?.map((item, i) => (
               <LinkButton
                 key={i}
-                text={item?.name}
+                text={item?.url ? item?.name : item?.name + " (준비중)"}
                 onClick={() => onClick(item?.url)}
               />
             ))

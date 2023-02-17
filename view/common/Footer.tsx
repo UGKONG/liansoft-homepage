@@ -8,7 +8,7 @@ export default function Footer() {
         <Article>
           <Logo img={footerLogo} />
           <Address>
-            COPYRIGHT(C) LianSoft co.ltd. ALLRIGHT RESERVED.2021
+            COPYRIGHT(C) LianSoft co.ltd. ALLRIGHT RESERVED.2015
           </Address>
         </Article>
         <Article>
@@ -20,7 +20,7 @@ export default function Footer() {
             <RowTitle>이메일</RowTitle>hspark@liansoft.co.kr
           </Row>
           <Row>
-            <RowTitle>대표번호</RowTitle>010-8288-2355 (AM09:00 ~ PM06:00)
+            <RowTitle>대표번호</RowTitle>010-3212-6599
           </Row>
         </Article>
       </Wrap>

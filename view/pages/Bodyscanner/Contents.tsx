@@ -29,7 +29,7 @@ export default function Contents() {
         <ProjectItem key={item?.id} idx={i} data={item} />
       ))}
 
-      <Center type="list" title="가맹점" list={list} fieldName="CENTER_NM" />
+      <Center type="list" title="운용센터" list={list} fieldName="CENTER_NM" />
     </Container>
   );
 }
