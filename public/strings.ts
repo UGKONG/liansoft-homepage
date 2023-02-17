@@ -197,22 +197,22 @@ export const companyHistory: CompanyHistory[] = [
   },
   {
     date: "2022.03",
-    content: "밸런스멤버쉽 (관리자용 웹) 론칭",
+    content: "밸런스멤버쉽 (관리자용 웹) 개발",
     img: "balanceplayadmin.png",
   },
   {
     date: "2022.06",
-    content: "밸런스멤버쉽 (회원용 웹) 론칭",
+    content: "밸런스멤버쉽 (회원용 웹) 개발",
     img: "balanceplaymember.png",
   },
   {
     date: "2022.10",
-    content: "닥터케어유니온 (강사용 웹) 론칭",
+    content: "닥터케어유니온 (강사용 웹) 개발",
     img: "",
   },
   {
     date: "2023.02",
-    content: "플레이톡 (회원용 앱) 론칭",
+    content: "플레이톡 (회원용 앱) 개발",
     img: "balanceplaytalk.jpeg",
   },
 ];
