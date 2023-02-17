@@ -13,6 +13,12 @@ import SnsContainer from "../../common/SnsContainer";
 export default function Contents() {
   const [list, setList] = useState<Center[]>([]);
 
+  const sortList = useMemo<Center[]>(() => {
+    return list?.sort((a, b) => {
+      return a?.CENTER_NM < b?.CENTER_NM ? -1 : 1;
+    });
+  }, [list]);
+
   const getCenter = (): void => {
     let url = "//drcareunion.com/admin/flow_controller.php?task=getCenterList";
     axios
@@ -43,7 +49,7 @@ export default function Contents() {
       <Center
         type="list"
         title={`가맹점 (${list?.length}개)`}
-        list={list}
+        list={sortList}
         fieldName="CENTER_NM"
       />
     </Container>

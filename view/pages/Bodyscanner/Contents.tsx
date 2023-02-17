@@ -6,10 +6,16 @@ import {
 import ProjectItem from "../../common/ProjectItem";
 import Center from "../../common/Center";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function Contents() {
   const [list, setList] = useState<DeviceCenter[]>([]);
+
+  const sortList = useMemo<DeviceCenter[]>(() => {
+    return list?.sort((a, b) => {
+      return a?.CENTER_NM < b?.CENTER_NM ? -1 : 1;
+    });
+  }, [list]);
 
   const getCenter = (): void => {
     let url = "//drcareunion.com/admin/flow_controller.php?task=getDevice";
@@ -32,7 +38,7 @@ export default function Contents() {
       <Center
         type="list"
         title={`운용센터 (${list?.length}개)`}
-        list={list}
+        list={sortList}
         fieldName="CENTER_NM"
       />
     </Container>
