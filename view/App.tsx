@@ -1,4 +1,4 @@
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./common/Footer";
@@ -15,6 +15,10 @@ import Way from "./pages/Way";
 import Info from "./pages/Info";
 import Contact from "./pages/Contact";
 import Loading from "./common/Loading";
+import Feagle from "./pages/Feagle";
+import Luna from "./pages/Luna";
+import Smartpole from "./pages/Smartpole";
+import Bpcp from "./pages/Bpcp";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -58,6 +62,10 @@ export default function App() {
         <Route path="/drcare" element={<Drcare />} />
         <Route path="/balanceplay" element={<Balanceplay />} />
         <Route path="/bodyscanner" element={<Bodyscanner />} />
+        <Route path="/device-management" element={<Feagle />} />
+        <Route path="/device-control" element={<Luna />} />
+        <Route path="/smartpole" element={<Smartpole />} />
+        <Route path="/bpcp" element={<Bpcp />} />
         <Route path="/security" element={<Security />} />
       </Routes>
 

@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function ProjectItem({ data, idx = 0 }: Props) {
-  const title = useMemo<string>(() => idx + 1 + ". " + data?.name, []);
+  const title = useMemo<string>(() => data?.id + ". " + data?.name, []);
 
   const img = useMemo<null | string>(() => {
     if (!data?.img) return null;

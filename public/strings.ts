@@ -21,6 +21,16 @@ export const menuList: MenuList[] = [
     ],
   },
   {
+    name: "응용 솔루션",
+    path: "/device-management",
+    sub: [
+      { name: "장비관리 시스템", path: "/device-management" },
+      { name: "장치제어 시스템", path: "/device-control" },
+      { name: "스마트 가로등", path: "/smartpole" },
+      { name: "커뮤니티 플랫폼", path: "/bpcp" },
+    ],
+  },
+  {
     name: "보안 솔루션",
     path: "/security",
     sub: [],
@@ -410,6 +420,89 @@ CCTV관제 시스템
 
 광고 및 제품변경 실시간 업데이트`,
     device: "pc",
+  },
+];
+
+// 피글 프로젝트
+export const feagleProjectList: Project[] = [
+  {
+    id: 1.1,
+    name: "피글매니저 (장비 사용자용) - Android/IOS용 앱",
+    img: "feagle-app.jpg",
+    desc: ``,
+    device: "mobile",
+    platform: [
+      { name: "Android", url: "" },
+      { name: "IOS", url: "" },
+    ],
+  },
+  {
+    id: 1.2,
+    name: "피글마스터 (관리자용) - PC/Tab용 웹",
+    img: "feagle-web.png",
+    desc: ``,
+    device: "pc",
+    url: "",
+  },
+];
+
+// 루나 프로젝트
+export const lunaProjectList: Project[] = [
+  {
+    id: 1,
+    name: "루나 (회원용) - Android/IOS용 앱",
+    img: "luna-app.png",
+    desc: ``,
+    device: "mobile",
+    platform: [
+      { name: "Android", url: "" },
+      { name: "IOS", url: "" },
+    ],
+  },
+  // {
+  //   id: 2,
+  //   name: "InPump - Android/IOS용 앱",
+  //   img: "luna-app.png",
+  //   desc: ``,
+  //   device: "mobile",
+  // },
+];
+
+// 스마트 가로등 프로젝트
+export const smartpoleProjectList: Project[] = [
+  {
+    id: 1,
+    name: "스마트폴 (장비용) - Windows용 앱",
+    img: "smartpole-app.png",
+    desc: ``,
+    device: "mobile",
+  },
+  {
+    id: 2,
+    name: "스마트폴 서버 - Linux Node.js용 서버",
+    img: "smartpole-server.png",
+    desc: ``,
+    device: "mobile",
+  },
+];
+
+// 스마트 커뮤니티 플랫폼 프로젝트
+export const bpcpProjectList: Project[] = [
+  {
+    id: 1,
+    name: "스마트 커뮤니티 플랫폼 (회원용) - PC/Tab/Mobile용 웹",
+    img: "bpcp-member.png",
+    desc: ``,
+    device: "pc",
+    url: "",
+  },
+  {
+    id: 2,
+    name: "스마트 커뮤니티 플랫폼 (관리자용) - PC/Tab용 웹",
+    img: "bpcp-admin.png",
+    desc: ``,
+    device: "pc",
+    url: "",
   },
 ];
 
