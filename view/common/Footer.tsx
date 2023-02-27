@@ -34,6 +34,7 @@ const Container = styled.footer`
   max-height: 190px;
   background-color: #262626;
   color: #808080a1;
+  min-width: 1200px;
 `;
 const Wrap = styled.div`
   width: 1200px;

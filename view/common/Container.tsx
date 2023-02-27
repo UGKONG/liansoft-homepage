@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 type Props = {
   children?: any;
   style?: any;
@@ -5,9 +7,10 @@ type Props = {
 };
 
 export default function Container({ children, type }: Props) {
-  return (
-    <main style={{ marginTop: type === "home" ? 0 : 90 }}>
-      {children ?? "컴포넌트가 없습니다."}
-    </main>
-  );
+  return <Main type={type}>{children ?? "컴포넌트가 없습니다."}</Main>;
 }
+
+const Main = styled.main<{ type?: "home" }>`
+  margin-top: ${(x) => (x?.type === "home" ? 0 : 90)}px;
+  min-width: 1200px;
+`;

@@ -20,13 +20,22 @@ const Image = styled.div<{ img: string }>`
 `;
 const Text = styled.div`
   position: absolute;
-  width: 750px;
+  width: 60%;
   top: 50%;
   left: 10%;
-  transform: translate(0, -80%);
+  transform: translate(0, -50%);
   color: #fff;
-  font-size: 50px;
   letter-spacing: 3px;
   word-break: keep-all;
   user-select: none;
+  transition: 0.3s;
+  font-size: 50px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+  }
 `;
