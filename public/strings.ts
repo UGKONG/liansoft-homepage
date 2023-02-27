@@ -25,8 +25,8 @@ export const menuList: MenuList[] = [
     path: "/device-management",
     sub: [
       { name: "장비관리 시스템", path: "/device-management" },
-      { name: "장치제어 시스템", path: "/device-control" },
-      { name: "스마트 가로등", path: "/smartpole" },
+      { name: "장치제어 앱", path: "/device-control" },
+      { name: "스마트폴 시스템", path: "/smartpole" },
       { name: "커뮤니티 플랫폼", path: "/bpcp" },
     ],
   },
@@ -61,7 +61,7 @@ export const solutionList: Solution[] = [
   { img: "img4_thum.jpg", path: "", name: "통합관제 시스템" },
   { img: "img5_thum.jpg", path: "", name: "차량 유도관제 시스템" },
   { img: "img6_thum.jpg", path: "", name: "무인결제 시스템" },
-  { img: "img7_thum.jpg", path: "", name: "스마트 시티 플랫폼" },
+  { img: "img7_thum.jpg", path: "", name: "스마트 커뮤니티 플랫폼" },
 ];
 
 // 사업영역
@@ -216,7 +216,7 @@ export const companyHistory: CompanyHistory[] = [
   },
   {
     date: "2021.07",
-    content: "부평구 스마트커뮤니티 플랫폼 개발",
+    content: "부평구 스마트 커뮤니티 플랫폼 개발",
     img: "",
   },
   {
@@ -429,7 +429,15 @@ export const feagleProjectList: Project[] = [
     id: 1.1,
     name: "피글매니저 (장비 사용자용) - Android/IOS용 앱",
     img: "feagle-app.jpg",
-    desc: ``,
+    desc: `장비의 정보 및 상태 모니터링
+    
+푸쉬기능을 통하여 실시간 장비의 상태 파악
+
+장비 사용 방법 가이드 제공
+
+장비 사용 로그 제공
+
+장비에 필요한 연료 신청 기능 제공`,
     device: "mobile",
     platform: [
       { name: "Android", url: "" },
@@ -440,7 +448,17 @@ export const feagleProjectList: Project[] = [
     id: 1.2,
     name: "피글마스터 (관리자용) - PC/Tab용 웹",
     img: "feagle-web.png",
-    desc: ``,
+    desc: `지역 별 장비 현황 파악
+
+장비 모델 정보 저장
+
+장비의 정보 및 상태 모니터링
+
+장비의 펌웨어, 소프트웨어 버전 확인 및 업그레이드
+
+장비 사용 로그 제공
+
+관리자의 각 권한에 따라 플랫폼 사용기능 분리`,
     device: "pc",
     url: "",
   },
@@ -452,7 +470,19 @@ export const lunaProjectList: Project[] = [
     id: 1,
     name: "루나 (회원용) - Android/IOS용 앱",
     img: "luna-app.png",
-    desc: ``,
+    desc: `장치와 블루투스로 연결
+
+블루투스 통신으로 장치 제어
+
+장치 저장 기능으로 주변 장치의 재검색 불필요
+
+장치 사용 방법 제공
+
+장치 사용 로그 제공
+
+SNS 로그인으로 인한 로그인 편리
+(카카오, 네이버, 페이스북, 애플)
+`,
     device: "mobile",
     platform: [
       { name: "Android", url: "" },
@@ -474,14 +504,27 @@ export const smartpoleProjectList: Project[] = [
     id: 1,
     name: "스마트폴 (장비용) - Windows용 앱",
     img: "smartpole-app.png",
-    desc: ``,
+    desc: `실시간 날씨 및 미세먼저 정보 확인
+
+현재상태, 오늘날씨, 내일날씨, 금주날씨 화면 자동 전환
+
+미세먼지, 초미세먼지 화면 자동 전환
+
+이미지 및 동영상 업로드 기능으로 홍보
+`,
     device: "mobile",
   },
   {
     id: 2,
     name: "스마트폴 서버 - Linux Node.js용 서버",
     img: "smartpole-server.png",
-    desc: ``,
+    desc: `자동으로 실시간 날씨 및 미세먼지 정보 수집
+
+서버와 데이터베이스 상태 실시간 모니터링
+
+수집 정보 및 시간 모니터링
+    
+`,
     device: "mobile",
   },
 ];
@@ -492,7 +535,16 @@ export const bpcpProjectList: Project[] = [
     id: 1,
     name: "스마트 커뮤니티 플랫폼 (회원용) - PC/Tab/Mobile용 웹",
     img: "bpcp-member.png",
-    desc: ``,
+    desc: `지역의 행사 및 사업 정보 확인
+
+공지사항 및 강의 정보, 설문조사 기능
+
+소모임 커뮤니티 공간 기능
+
+식당 정보 확인, 예약 기능 및 쿠폰 사용
+
+공연장 사용 방법 및 예약, 사용 문의
+`,
     device: "pc",
     url: "",
   },
@@ -500,7 +552,16 @@ export const bpcpProjectList: Project[] = [
     id: 2,
     name: "스마트 커뮤니티 플랫폼 (관리자용) - PC/Tab용 웹",
     img: "bpcp-admin.png",
-    desc: ``,
+    desc: `커뮤니티의 회원과 관리자의 정보 및 권한 관리
+
+공지사항 및 강의 정보, 설문조사 업로드
+
+소모임 커뮤니티 공간 개방
+
+식당 정보 업로드
+
+공연장 예약 관리 및 사용 문의 응대
+`,
     device: "pc",
     url: "",
   },
