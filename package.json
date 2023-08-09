@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "git": "git add -A && git commit -m 'update' && git push -f origin main",
     "build": "webpack --mode production && open ./build",
     "dev": "webpack-dev-server --mode development --hot"
   },

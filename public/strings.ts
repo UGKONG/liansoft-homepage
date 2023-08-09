@@ -249,6 +249,16 @@ export const companyHistory: CompanyHistory[] = [
     content: "플레이톡 (회원용 앱) 개발",
     img: "",
   },
+  {
+    date: "2023.06",
+    content: "스마트폴 관리 프로그램 개발",
+    img: "",
+  },
+  {
+    date: "2023.07",
+    content: "사이니지 프로그램 개발",
+    img: "",
+  },
 ];
 
 // 닥터케어 프로젝트
@@ -526,6 +536,17 @@ export const smartpoleProjectList: Project[] = [
     
 `,
     device: "mobile",
+  },
+  {
+    id: 3,
+    name: "스마트폴 관리 프로그램 - PC/Tab용 웹",
+    img: "smartpoleadmin.png",
+    desc: `스마트폴 장비 (전광판, 사이니지) 스케줄링
+
+스마트폴 데이터 실시간 모니터링
+    
+`,
+    device: "pc",
   },
 ];
 
